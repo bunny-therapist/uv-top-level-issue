@@ -3,7 +3,7 @@ import importlib_metadata as metadata
 
 
 if __name__ == "__main__":
-    # uv run demonstrate
+    # uv run demonstrate.py
     dists = metadata.packages_distributions()
     print(dists)
     assert "the_package_name" in dists
