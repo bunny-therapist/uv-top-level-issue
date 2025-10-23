@@ -1,9 +1,10 @@
-import importlib.metadata
+import importlib_metadata as metadata
+# from importlib import metadata
 
 
 if __name__ == "__main__":
     # uv run demonstrate
-    dists = importlib.metadata.packages_distributions()
+    dists = metadata.packages_distributions()
     print(dists)
     assert "the_package_name" in dists
     assert "uv-top-level-issue" in dists["the_package_name"]
