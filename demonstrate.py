@@ -6,8 +6,10 @@ if __name__ == "__main__":
     # uv run demonstrate.py
     dists = metadata.packages_distributions()
     print(dists)
-    assert "the_package_name" in dists
-    assert "uv-top-level-issue" in dists["the_package_name"]
+    importable_package_name = "uv_top_level_issue"
+    distribution_package_name = "uv-top-level-issue"
+    assert importable_package_name in dists
+    assert distribution_package_name in dists[importable_package_name]
     # Asserts pass with setuptools build-backend
     #   {'_distutils_hack': ['setuptools'], 'pkg_resources': ['setuptools'], 'setuptools': ['setuptools'], 'pip': ['pip'], 'the_package_name': ['uv-top-level-issue'], 'uv': ['uv']
     # Asserts fail with uv build-backend
